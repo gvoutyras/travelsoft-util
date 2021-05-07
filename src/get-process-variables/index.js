@@ -1,5 +1,5 @@
 /*eslint-disable*/
-module.exports = (proccedure, sendAtSign) => {
+module.exports = (tdsCon, proccedure, sendAtSign) => {
   let queryCode = `SELECT
       pa.parameter_id AS [order]
       , pa.name AS [name]
@@ -12,7 +12,7 @@ module.exports = (proccedure, sendAtSign) => {
 
   let query = { sql: queryCode };
 
-  return global.iBusCon
+  return tdsCon
     .request(query)
     .then((resultSet) => {
       if (resultSet[0].length !== 0) {
