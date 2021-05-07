@@ -4,7 +4,7 @@
 ## Install
 
 ```
-$ npm install @bamblehorse/tiny
+$ npm install travelsoft-util
 ```
 
 ## Usage
@@ -59,6 +59,63 @@ EXEC procName
 @param1='value1',
 @param2=2
 */
+```
+
+```js
+let travelUtil = require("travelsoft-util");
+
+let vars = await travelUtil.getProcessVariables(
+  global.iBusCon,
+  "market_hnd",
+  false
+);
+
+cosole.log(vars);
+
+/*
+[
+    {
+        "order": 1,
+        "name": "action",
+        "type": "NVARCHAR",
+        "length": 8000
+    },
+    {
+        "order": 2,
+        "name": "market_id",
+        "type": "SMALLINT",
+        "length": 2
+    },
+    {
+        "order": 3,
+        "name": "name",
+        "type": "NVARCHAR",
+        "length": 8000
+    },
+    {
+        "order": 4,
+        "name": "descr",
+        "type": "NVARCHAR",
+        "length": 8000
+    },
+    {
+        "order": 5,
+        "name": "cnt_code",
+        "type": "SMALLINT",
+        "length": 2
+    },
+    {
+        "order": 6,
+        "name": "market_ids",
+        "type": "NVARCHAR",
+        "length": 8000
+    }
+]
+*/
+```
+
+```js
+let vv = travelUtil.variableValidator(vars, skip);
 ```
 
 ## The Query Builder Class
