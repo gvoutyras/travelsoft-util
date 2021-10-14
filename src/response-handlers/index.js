@@ -7,6 +7,7 @@ const respStatusEnum = {
 function successfulResponse(data, message) {
   return {
     respStatus: respStatusEnum.true,
+    status: respStatusEnum.true,
     data: data,
     message: message,
   };
@@ -15,6 +16,7 @@ function successfulResponse(data, message) {
 function failedResponse(message, errorCode) {
   return {
     respStatus: respStatusEnum.false,
+    status: respStatusEnum.false,
     data: null,
     message: message,
     errorCode: errorCode,
@@ -24,6 +26,7 @@ function failedResponse(message, errorCode) {
 function errorResponse(message, errorCode) {
   return {
     respStatus: respStatusEnum.error,
+    status: respStatusEnum.error,
     data: null,
     message: message,
     errorCode: errorCode,
